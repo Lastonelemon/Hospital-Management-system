@@ -1,93 +1,94 @@
-# Hospital-Management-system
-# Vityarthi_Project-Python-
-Intro to problem Solving with python(Vityarthi)
+# Password Strength Checker & Generator
 
-Technical Documentation: Hospital Management System (HMS)
+A Python-based application to check password strength and generate secure passwords.
 
-This documentation outlines the setup and structure for a basic Python program designed to simulate core operations of a Hospital Management System. The project uses only fundamental Python concepts (functions, lists, loops, and conditionals) as data structures and logic controls.
+## Features
 
-1. Prerequisites and Dependencies
+- **Password Strength Checker**: Analyzes passwords and provides a strength score (0-6)
+- **Password Generator**: Creates strong passwords with customizable length
+- **Visual Feedback**: Displays strength with progress bars
+- **Detailed Suggestions**: Provides tips to improve weak passwords
 
-The HMS script relies solely on the core Python installation.
+## Requirements
 
-Software Requirements:
-Python: Version 3.x or higher.
-Operating System: Any OS that supports Python (Windows, macOS, Linux).
+- Python 3.x
+- No external libraries required (uses built-in modules)
 
-Dependencies:
-No external libraries are required. The program is self-contained using only built-in Python features.
+## Installation
 
-2. Program Structure and Core Logic
+1. Download the project files
+2. Ensure Python 3.x is installed on your system
+3. No additional installation needed
 
-The program manages patient records in memory and is driven by a simple menu loop.
+## How to Run
 
-Section A. Data Structures (Lists)
-The patients List is a global list (patients = []) used to store all patient records. Each patient is represented as a list itself, adhering to the format: [ID, Name, Disease].
-The current_id Counter is a global integer variable (current_id = 1) that tracks the next available sequential Patient ID, ensuring unique IDs.
+```bash
+python password_checker.py
+```
 
-Section B. Core Functions (The Logic)
+## Usage
 
-Function 1. register():
-Logic: Takes user input for Name and Disease. Appends the new record [ID, Name, Disease] to the global patients list. Increments the current_id counter.
-Concepts Used: Global variable access, list append().
+### Menu Options
 
-Function 2. view():
-Logic: Checks if the patients list is empty (Conditional). If not empty, it uses a for loop to iterate through the list and prints each patient's details by concatenating the data fields (str(p[0]) + "\t" + p[1] + ...).
-Concepts Used: Conditionals (if/else), for loop, list indexing, string concatenation.
+1. **Check Password Strength**
+   - Enter any password to analyze
+   - Get a strength score and improvement suggestions
+   - See visual representation of password strength
 
-Function 3. discharge():
-Logic: Prompts for a Patient ID. Uses a for loop to search for the ID within the patients list (Conditional check: if patients[i][0] == pid). If found, calculates a simple bill based on user-inputted days stayed (basic arithmetic) and removes the record using patients.pop(i).
-Concepts Used: Conditionals (if/else), for loop, list indexing, list pop().
+2. **Generate Strong Password**
+   - Specify desired password length (default: 12 characters)
+   - Automatically creates a strong password
+   - Includes uppercase, lowercase, numbers, and special characters
 
-3. Installation and Setup Instructions
+3. **Exit**
+   - Close the application
 
-The setup requires no installation steps other than running the script.
+## Password Strength Criteria
 
-Section A. Environment Setup
-Verify Python: Ensure Python 3.x is available on your system.
+The checker evaluates passwords based on:
 
-Section B. Script Installation
-Download/Create the Script: Save the code into a file named hospital_management.py.
+- **Length** (minimum 8 characters) - 2 points
+- **Uppercase letters** - 1 point
+- **Lowercase letters** - 1 point
+- **Numbers** - 1 point
+- **Special characters** (!@#$%) - 1 point
 
-4. Usage and Execution
+### Strength Levels
 
-Section A. Running from the Command Line
-To run the program, execute the hospital_management.py script:
+- **0-2 points**: WEAK
+- **3-4 points**: MEDIUM
+- **5-6 points**: STRONG
 
-python hospital_management.py
+## Project Structure
 
+```
+password-checker/
+│
+├── password_checker.py    # Main application file
+└── README.md             # Project documentation
+```
 
-The program will immediately present the main menu in the console:
+## Python Concepts Used
 
-1. Register  2. View  3. Discharge  4. Exit
-Option: 
+- Functions
+- String manipulation
+- Loops (for, while)
+- Conditionals (if-elif-else)
+- Built-in modules (string)
+- User input/output
+- Lists and iteration
 
+## Future Enhancements
 
-Section B. Menu Options
+- Add password history storage
+- Implement entropy calculation
+- Add common password dictionary check
+- Create GUI interface
 
-Register: Creates a new patient record and assigns an ID.
+## Author
 
-View: Displays all current patient records in a list format.
+Semester 1 Python Project
 
-Discharge: Processes a bill for a patient ID and removes them from the system.
+## License
 
-Exit: Terminates the application.
-
-5. Code Details
-
-# Main program loop running directly
-while True:
-    print("\n1. Register  2. View  3. Discharge  4. Exit")
-    choice = input("Option: ")
-    
-    if choice == '1':
-        register()
-    elif choice == '2':
-        view()
-    elif choice == '3':
-        discharge()
-    elif choice == '4':
-        print("System shutdown. Goodbye.")
-        break
-    else:
-        print("Invalid option. Please choose 1, 2, 3, or 4.")
+Free to use for educational purposes
