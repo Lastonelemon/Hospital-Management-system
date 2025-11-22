@@ -85,10 +85,3 @@ password-checker/
 - Add common password dictionary check
 - Create GUI interface
 
-## Author
-
-Semester 1 Python Project
-
-## License
-
-Free to use for educational purposes
