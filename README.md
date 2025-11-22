@@ -78,10 +78,3 @@ password-checker/
 - User input/output
 - Lists and iteration
 
-## Future Enhancements
-
-- Add password history storage
-- Implement entropy calculation
-- Add common password dictionary check
-- Create GUI interface
-
